@@ -1,0 +1,34 @@
+#include <stdio.h>
+void nhapMang( int a[], int n)
+{
+	for(int i=0;i<n;i++){
+		printf("\n nhap phan tu a[i]:",i);
+		scanf("%d",&a[i]);
+	}
+}
+void xuatMang(int a[], int n){
+	for(int i=0; i<n;i++)
+		printf("\nphan tu a[%d]=%d:",i,a[i]);
+}
+int Max(int a[], int n){
+	
+	if(n==1)
+		return a[0];
+	if(Max(a,n-1 > a[n-1]))
+		return Max(a,n-1);
+	else	
+		return a[n-1];
+}
+int main(int argc, char *argv[])
+{
+	int a[100];
+	int n;
+	printf("\n nhap so luong phan tu:");
+	scanf("%d",&n);
+	printf("\n ----Nhap Mang ----");
+	nhapMang(a,n);
+	printf("\n====Xuat Mang====");
+	xuatMang(a,n);
+	printf("\n Max:%d",Max(a,n));
+	return 0;
+}
